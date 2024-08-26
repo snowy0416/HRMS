@@ -1,12 +1,2 @@
-2024-08-21T11:01:25.066+05:30  INFO 23176 --- [main] e.a.AttendanceTrackingBackendApplication : Starting AttendanceTrackingBackendApplication using Java 21.0.4 with PID 23176 (C:\Users\soniy\Desktop\HRMS-Module\attendance-tracking-backend\target\classes started by soniy in C:\Users\soniy\Desktop\HRMS-Module\attendance-tracking-backend)
-2024-08-21T11:01:25.068+05:30  INFO 23176 --- [main] e.a.AttendanceTrackingBackendApplication : No active profile set, falling back to 1 default profile: "default"
-2024-08-21T11:01:25.578+05:30  INFO 23176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-08-21T11:01:25.595+05:30  INFO 23176 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
-2024-08-21T11:01:26.001+05:30  INFO 23176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-08-21T11:01:26.016+05:30  INFO 23176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-08-21T11:01:26.017+05:30  INFO 23176 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
-2024-08-21T11:01:26.083+05:30  INFO 23176 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-08-21T11:01:26.084+05:30  INFO 23176 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 978 ms
-2024-08-21T11:01:26.209+05:30  INFO 23176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-08-21T11:01:26.283+05:30  INFO 23176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-08-21T11:01:26.321+05:30  INFO 23176 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-26T19:37:26.444+05:30  INFO 24856 --- [main] e.a.AttendanceTrackingBackendApplication : Starting AttendanceTrackingBackendApplication using Java 21.0.4 with PID 24856 (C:\Users\soniy\Desktop\HRMS-Module\attendance-tracking-backend\target\classes started by soniy in C:\Users\soniy\Desktop\HRMS-Module\attendance-tracking-backend)
+2024-08-26T19:37:26.461+05:30  INFO 24856 --- [main] e.a.AttendanceTrackingBackendApplication : No active profile set, falling back to 1 default profile: "default"
