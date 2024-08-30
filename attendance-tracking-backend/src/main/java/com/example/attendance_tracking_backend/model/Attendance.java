@@ -1,22 +1,26 @@
 package com.example.attendance_tracking_backend.model;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "attendance")
 public class Attendance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "emp_id", nullable = false)
     private String empId;
+
+    @Column(name = "note")
     private String note;
+
+    @Column(name = "check_in", nullable = false)
     private boolean checkIn;
+
+    @Column(name = "timestamp", nullable = false)
     private LocalDateTime timestamp;
 
     // Getters and Setters
@@ -60,5 +64,3 @@ public class Attendance {
         this.timestamp = timestamp;
     }
 }
-
-

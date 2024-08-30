@@ -1,14 +1,11 @@
 package com.example.attendance_tracking_backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class LeaveRequest {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,8 +23,30 @@ public class LeaveRequest {
     private String approvalStatus;
     private String comments;
 
+    // Default constructor (required by JPA)
+    public LeaveRequest() {
+    }
 
+    // Constructor with all fields
+    public LeaveRequest(String name, String employeeId, String position, String contactNumber,
+                        String emailAddress, String leaveType, LocalDate leaveStartDate,
+                        LocalDate leaveEndDate, String reason, String supervisorName,
+                        String approvalStatus, String comments) {
+        this.name = name;
+        this.employeeId = employeeId;
+        this.position = position;
+        this.contactNumber = contactNumber;
+        this.emailAddress = emailAddress;
+        this.leaveType = leaveType;
+        this.leaveStartDate = leaveStartDate;
+        this.leaveEndDate = leaveEndDate;
+        this.reason = reason;
+        this.supervisorName = supervisorName;
+        this.approvalStatus = approvalStatus;
+        this.comments = comments;
+    }
 
+    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -133,4 +152,3 @@ public class LeaveRequest {
         this.comments = comments;
     }
 }
-

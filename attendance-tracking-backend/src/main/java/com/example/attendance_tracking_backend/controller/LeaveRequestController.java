@@ -6,12 +6,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/leaves")
+@CrossOrigin(origins = "http://localhost:3000") // Allow requests from React app
 public class LeaveRequestController {
 
     private final LeaveRequestService leaveRequestService;
@@ -35,10 +37,7 @@ public class LeaveRequestController {
         @RequestParam("approvalStatus") String approvalStatus,
         @RequestParam("comments") String comments
     ) {
-        // Define the date format you expect
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        
-        // Convert String to LocalDate
         LocalDate startDate = LocalDate.parse(leaveStartDate, formatter);
         LocalDate endDate = LocalDate.parse(leaveEndDate, formatter);
 
@@ -46,5 +45,21 @@ public class LeaveRequestController {
                 emailAddress, leaveType, startDate, endDate, reason, supervisorName,
                 approvalStatus, comments);
         return new ResponseEntity<>(leaveRequest, HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<LeaveRequest>> getAllLeaveRequests() {
+        List<LeaveRequest> leaveRequests = leaveRequestService.getAllLeaveRequests();
+        return new ResponseEntity<>(leaveRequests, HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<LeaveRequest> updateLeaveRequestStatus(
+        @PathVariable Long id,
+        @RequestBody Map<String, String> updates
+    ) {
+        String approvalStatus = updates.get("approvalStatus");
+        LeaveRequest updatedLeaveRequest = leaveRequestService.updateLeaveRequestStatus(id, approvalStatus);
+        return new ResponseEntity<>(updatedLeaveRequest, HttpStatus.OK);
     }
 }
